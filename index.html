@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    	<title>Stellar JS Parallax Template</title>
+    	<meta charset="utf-8">
+
+		<style>
+
+			body {
+				background: #444;
+			}
+			
+			.wrapper {
+				height: 636px;
+				width: 1006px;
+				margin: 0 auto;
+				background: #fff;
+				overflow-y: scroll;
+				position: relative;
+						z-index: 1;
+			}
+			
+			.content {
+				position: relative;
+				z-index: 100;
+				overflow: hidden;
+				height: 2000px;
+			}
+
+			.section {
+				position: absolute;
+				top: 1000px;
+				z-index: 400;
+			}
+
+			.box {
+				background: red;
+				height: 100px;
+				width: 100px;
+				text-align: center;
+				line-height: 100px;
+				color: #fff;
+				position: absolute;
+				z-index: 500;
+				border-radius: 50%;
+				font-family: sans-serif;
+				top: 300px;
+			}
+
+			.bg {
+				height: 2000px;
+				width: 1006px;
+				z-index: 100;
+				background-attachment: fixed;
+				position: absolute;
+			}
+
+			.bg-1 {
+				background: url(background.png);
+			}
+
+			.bg-2 {
+				background: url(midground.png);
+			}
+
+			.bg-3 {
+				background: url(foreground.png);
+			}
+
+		</style>
+
+  	</head>
+
+  	<body>
+  		<div class="wrapper">
+			<div class="content">
+
+				<div class="bg bg-1" data-stellar-background-ratio="0.2"></div>
+				<div class="bg bg-2" data-stellar-background-ratio="0.4"></div>
+				<div class="bg bg-3" data-stellar-background-ratio="0.6"></div>
+
+				<div class="section" data-stellar-vertical-offset="1000">
+		  			<div class="box"  style="left: 100px;" data-stellar-ratio="1.8">
+		  				sup yo 1
+		  			</div>
+		  			<div class="box" style="left: 400px; top: 100px;">
+		  				sup yo 2
+		  			</div>
+		  			<div class="box" style="left: 700px;" data-stellar-ratio="1.2">
+		  				sup yo 3
+		  			</div>
+		  		</div>
+
+			</div>
+  		</div>
+    	
+		<!-- Third Party Libraries -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
+		<script src="jQuery.scrollTo.js" type="text/javascript"></script>
+    	<script src="jquery.stellar.js" type="text/javascript"></script>
+    	
+    	<script>
+
+    		// Feature detection for 3D transforms
+			var supports3DTransforms =  'WebkitPerspective' in document.body.style ||
+										'MozPerspective' in document.body.style ||
+										'msPerspective' in document.body.style ||
+										'OPerspective' in document.body.style ||
+										'perspective' in document.body.style;
+
+			var positionProperty = "position";
+
+			if(supports3DTransforms)
+				positionProperty = 'transform';
+
+    		// Init Stellar JS
+    		$('.wrapper').stellar({positionProperty: positionProperty});
+
+    		// Auto scroll on page load
+    		$('.wrapper').scrollTo('1000px',3000);
+    	
+    	</script>
+
+  	</body>
+</html>
+
