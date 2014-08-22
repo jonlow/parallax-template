@@ -8,6 +8,7 @@
 
 			body {
 				background: #444;
+				font-family: sans-serif;
 			}
 			
 			.wrapper {
@@ -34,7 +35,7 @@
 			}
 
 			.box {
-				background: red;
+				background: #D91836;
 				height: 100px;
 				width: 100px;
 				text-align: center;
@@ -43,14 +44,41 @@
 				position: absolute;
 				z-index: 500;
 				border-radius: 50%;
-				font-family: sans-serif;
 				top: 300px;
+			}
+
+
+			h1 {
+				position: absolute;
+				color: #fff;
+				text-align: center;
+				width: 100%;
+				top: 200px;
+			}
+
+			.btn {
+				position: absolute;
+				background: #D91836;
+				color: #FFF;
+				border-radius: 5px;
+				width: 120px;
+				line-height: 40px;
+				text-align: center;
+				text-decoration: none;
+				left: 50%;
+				margin-left: -60px;
+				top: 300px;
+	
+			}
+
+			.btn:hover {
+				text-decoration: underline;
+				background: #C2132E;
 			}
 
 			.bg {
 				height: 2000px;
 				width: 1006px;
-				z-index: 100;
 				background-attachment: fixed;
 				position: absolute;
 			}
@@ -78,6 +106,10 @@
 				<div class="bg bg-1" data-stellar-background-ratio="0.2"></div>
 				<div class="bg bg-2" data-stellar-background-ratio="0.4"></div>
 				<div class="bg bg-3" data-stellar-background-ratio="0.6"></div>
+
+				<h1 data-stellar-ratio="1.4">Parallax Shiz</h1>
+
+				<a href="#" class="btn">Click Me</a>
 
 				<div class="section" data-stellar-vertical-offset="1000">
 		  			<div class="box"  style="left: 100px;" data-stellar-ratio="1.8">
@@ -116,8 +148,11 @@
     		// Init Stellar JS
     		$('.wrapper').stellar({positionProperty: positionProperty});
 
-    		// Auto scroll on page load
-    		$('.wrapper').scrollTo('1000px',3000);
+    		$( '.btn').click(function() {
+			  $('.wrapper').scrollTo('1000px',3000);
+			});
+
+    		
     	
     	</script>
 
