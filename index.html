@@ -35,7 +35,7 @@
 			}
 
 			.box {
-				background: #D91836;
+				background: #36578B;
 				height: 100px;
 				width: 100px;
 				text-align: center;
@@ -109,19 +109,24 @@
 
 				<h1 data-stellar-ratio="1.4">Parallax Shiz</h1>
 
-				<a href="#" class="btn">Click Me</a>
+				<a href="#" class="btn down">Go Down</a>
 
 				<div class="section" data-stellar-vertical-offset="1000">
-		  			<div class="box"  style="left: 100px;" data-stellar-ratio="1.8">
+		  			<div class="box"  style="left: 100px;" data-stellar-ratio="2">
 		  				sup yo 1
 		  			</div>
 		  			<div class="box" style="left: 400px; top: 100px;">
 		  				sup yo 2
 		  			</div>
-		  			<div class="box" style="left: 700px;" data-stellar-ratio="1.2">
+		  			<div class="box" style="left: 700px; top: 400px;" data-stellar-ratio="0.8">
 		  				sup yo 3
 		  			</div>
+
 		  		</div>
+				
+
+				<a href="#" class="btn up" style="top: 1500px;">Go Up</a>
+
 
 			</div>
   		</div>
@@ -148,8 +153,12 @@
     		// Init Stellar JS
     		$('.wrapper').stellar({positionProperty: positionProperty});
 
-    		$( '.btn').click(function() {
+    		$( '.btn.down').click(function() {
 			  $('.wrapper').scrollTo('1000px',3000);
+			});
+
+			$( '.btn.up').click(function() {
+			  $('.wrapper').scrollTo(0,3000);
 			});
 
     		
