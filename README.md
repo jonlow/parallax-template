@@ -2,6 +2,10 @@
 
 Parallax using [Stellar.JS](http://markdalgleish.com/projects/stellar.js/). Works in IE8, but uses CSS3 transforms in modern browsers for better performance.
 
+###Docs
+
+Checkout the [Stellar.JS documentation](http://markdalgleish.com/projects/stellar.js/docs/).
+
 ###Performance
 
 Currently 'parallaxing' these elements:
